@@ -10,21 +10,23 @@ public abstract class SingletonScriptableObject<T> : ScriptableObject where T: S
         {
             if(_instance== null)
             {
-                T[] result= FindObjectsOfType<T>();
+                T[] result= Resources.FindObjectsOfTypeAll<T>();
                 if(result.Length==0)
                 {
                     Debug.LogError("No Game Object of the scriptable was created ");
+                    return null;
                 }
 
-                else if(result.Length>1)
+                if(result.Length>1)
                 {
                     Debug.LogError("The Game Object has been instantiated many times");
+                    return null;
 
                 }
 
-                else{
-                    _instance= result[0];
-                }
+                
+                _instance= result[0];
+                
                 
 
             }
