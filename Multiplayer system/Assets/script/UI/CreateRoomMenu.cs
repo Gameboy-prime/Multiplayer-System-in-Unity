@@ -14,7 +14,7 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     public void OnClickMakeRoom()
     {
         //Check to see if a connection has been made to Photon befpre making a room
-        if(!PhotonNetwork.IsConnected)
+        if(PhotonNetwork.IsConnected)
         {
             RoomOptions options= new RoomOptions();
             options.MaxPlayers= MasterManger.GameSetting.PlayerNumber;
@@ -32,6 +32,10 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Room Has Been Created");
+        Debug.Log(PhotonNetwork.CountOfRooms);
+        
+        
+        
         
     }
     
