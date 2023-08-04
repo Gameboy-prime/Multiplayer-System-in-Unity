@@ -7,7 +7,7 @@ using UnityEngine;
 public class MasterManger : SingletonScriptableObject<MasterManger>
 {
     
-    [SerializeField] private GameSetting gameSetting;
+    [SerializeField] GameSetting gameSetting;
 
     public static GameSetting GameSetting
     {
