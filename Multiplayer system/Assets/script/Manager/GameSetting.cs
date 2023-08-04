@@ -33,6 +33,17 @@ public class GameSetting : ScriptableObject
 
     }
 
+    [SerializeField] private int playerNumber=4;
+    public int PlayerNumber
+    {
+        get 
+        {
+            return playerNumber;
+        }
+    }
+
+
+
     
     
 }

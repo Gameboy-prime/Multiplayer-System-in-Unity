@@ -9,18 +9,21 @@ using Photon.Realtime;
 public class CreateRoomMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField] private TextMeshProUGUI roomName;
-    [SerializeField] private int playerNumber=4;
-    public int PlayerNumber{get {return playerNumber;}}
+    
 
     public void OnClickMakeRoom()
     {
-        RoomOptions options= new RoomOptions();
-        options.MaxPlayers= PlayerNumber;
+        //Check to see if a connection has been made to Photon befpre making a room
+        if(!PhotonNetwork.IsConnected)
+        {
+            RoomOptions options= new RoomOptions();
+            options.MaxPlayers= MasterManger.GameSetting.PlayerNumber;
         
 
-        PhotonNetwork.JoinOrCreateRoom(roomName.ToString(), options, TypedLobby.Default);
-        Debug.Log("Making a room");
+            PhotonNetwork.JoinOrCreateRoom(roomName.ToString(), options, TypedLobby.Default);
+            Debug.Log("Making a room");
 
+        }
 
     }
 
@@ -29,6 +32,7 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Room Has Been Created");
+        
     }
     
 
