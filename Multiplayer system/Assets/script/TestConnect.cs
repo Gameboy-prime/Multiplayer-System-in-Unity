@@ -17,6 +17,7 @@ public class TestConnect : MonoBehaviourPunCallbacks
         //THen we connect using the settings set
         PhotonNetwork.ConnectUsingSettings();
         Debug.Log("Connecting to server");
+
     
     }
 
@@ -27,6 +28,7 @@ public class TestConnect : MonoBehaviourPunCallbacks
         Debug.Log("Connected to server");
         string name=PhotonNetwork.LocalPlayer.NickName;
         Debug.Log(MasterManger.GameSetting.WelcomeMessage + " " + name.ToUpper());
+        PhotonNetwork.JoinLobby();
  
     }
 
