@@ -14,17 +14,31 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     public void OnClickMakeRoom()
     {
         //Check to see if a connection has been made to Photon befpre making a room
-        if(PhotonNetwork.IsConnected)
+        if(!PhotonNetwork.IsConnected)
         {
-            RoomOptions options= new RoomOptions();
-            options.MaxPlayers= MasterManger.GameSetting.PlayerNumber;
-        
+            return;
+            
 
+        }
+        RoomOptions options= new RoomOptions();
+        options.MaxPlayers= MasterManger.GameSetting.PlayerNumber;
+
+        //Make sure the room name  is not empty when creating a room
+        if(roomName.text==null)
+        {
+            Debug.Log("The room name cannot be empty");
+
+
+        }
+        else
+        {
             PhotonNetwork.JoinOrCreateRoom(roomName.ToString(), options, TypedLobby.Default);
             Debug.Log("Making a room");
 
         }
+        
 
+        
     }
 
     
