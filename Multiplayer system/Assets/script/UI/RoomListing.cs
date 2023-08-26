@@ -9,12 +9,12 @@ public class RoomListing : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI text;
 
-    //public  RoomInfo Info{get; private set;}
+    public  RoomInfo RoomInfo{get; private set;}
 
-    public void SetRoomInfo(RoomInfo info)
+    public void SetRoomInfo(RoomInfo roominfo)
     {
-        //Info=info;
-        text.text= info.MaxPlayers  + info.Name;
+        RoomInfo=roominfo;
+        text.text= roominfo.MaxPlayers  + roominfo.Name;
 
     }
 
