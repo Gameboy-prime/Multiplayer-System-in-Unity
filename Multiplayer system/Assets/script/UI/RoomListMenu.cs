@@ -24,13 +24,12 @@ public class RoomListMenu : MonoBehaviourPunCallbacks
             //If Removed From List
             if(info.RemovedFromList)
             {
-                int index= listRoom.FindIndex(x => x.RoomInfo.name==);
-                if(index != 1)
+                int index= listRoom.FindIndex(x => x.RoomInfo.Name== info.Name);
+                if(index != -1)
                 {
                     Destroy(listRoom[index].gameObject);
                     listRoom.RemoveAt(index);
-
-                }
+                }             
                 
 
 
@@ -40,15 +39,7 @@ public class RoomListMenu : MonoBehaviourPunCallbacks
             else
             {
                 RoomListing listing= Instantiate(roomlisting,content);
-                if(listing)
-                {
-                    Debug.Log("The Room Has been made");
-                }
-                else
-                {
-                    Debug.Log("Did not create a room");
-                    
-                }
+                
                 
                 if(listing != null)
                 {
