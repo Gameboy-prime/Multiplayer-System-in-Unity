@@ -32,7 +32,7 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
         }
         else
         {
-            PhotonNetwork.JoinOrCreateRoom(roomName.ToString(), options, TypedLobby.Default);
+            PhotonNetwork.JoinOrCreateRoom(roomName.text, options, TypedLobby.Default);
             Debug.Log("Making a room");
 
         }
