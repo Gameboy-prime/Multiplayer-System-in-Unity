@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 1553513351}
-  roomlisting: {fileID: 2559671185846577398, guid: ca889f3189460a4448a9ad9541e8dcfb, type: 3}
+  roomlisting: {fileID: 944543132597882741, guid: ca889f3189460a4448a9ad9541e8dcfb, type: 3}
 --- !u!1 &485795741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,8 +1896,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
