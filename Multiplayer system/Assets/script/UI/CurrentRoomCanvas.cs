@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CurrentRoomCanvas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private RoomCanvas roomCanvas;
+    public void FirstInitialize(RoomCanvas canvas)
     {
-        
+        roomCanvas=canvas;
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Show()
     {
-        
+        gameObject.SetActive(true);
+
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -9,6 +9,13 @@ using Photon.Realtime;
 public class CreateRoomMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField] private TextMeshProUGUI roomName;
+
+    private RoomCanvas roomCanvas;
+    public void FirstInitialize(RoomCanvas canvas)
+    {
+        roomCanvas=canvas;
+
+    }
     
 
     public void OnClickMakeRoom()
@@ -33,9 +40,12 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
         else
         {
             PhotonNetwork.JoinOrCreateRoom(roomName.text, options, TypedLobby.Default);
+
+
             Debug.Log("Making a room");
 
         }
+        roomCanvas.CurrentRoomCanvas.Show();
         
 
         

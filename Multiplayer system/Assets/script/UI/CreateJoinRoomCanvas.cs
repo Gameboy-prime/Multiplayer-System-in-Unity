@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class CreateJoinRoomCanvas : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private CreateRoomMenu createRoomMenu;
+    private RoomCanvas roomCanvas;
+    public void FirstInitialize(RoomCanvas canvas)
     {
-        
+        roomCanvas=canvas;
+        createRoomMenu.FirstInitialize(canvas);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
